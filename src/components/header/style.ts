@@ -158,14 +158,14 @@ export const Button = styled.div`
   margin: 15px;
   transition-duration: 0.5s;
   cursor: pointer;
+  &.currentPage {
+    color: #8360c3;
+  }
   :hover {
     color: #8360c3;
     transform: perspective(1px) scale(1.1);
   }
   @media (max-width: 768px) {
     color: white;
-    :hover {
-      transform: scale3d(1.1);
-    }
   }
 `;

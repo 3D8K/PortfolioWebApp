@@ -7,7 +7,11 @@ function App() {
   return (
     <Wrapper>
       <HeaderComponent />
-      <Router />
+      <main
+        style={{ position: "relative", overflow: "scroll", height: "100vh" }}
+      >
+        <Router />
+      </main>
     </Wrapper>
   );
 }

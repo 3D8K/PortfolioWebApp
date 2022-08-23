@@ -9,7 +9,6 @@ import { Contact } from "./components/pages/contact/contact";
 export function Router() {
   const screenWidth = window.innerWidth;
   const location = useLocation();
-  console.log(screenWidth);
   const transitions = useTransition(
     location,
     screenWidth >= 768
@@ -30,8 +29,8 @@ export function Router() {
       : {}
   );
   return transitions((props, item) => (
-    <animated.main style={props}>
-      <div style={{ position: "absolute", height: "100%", width: "100%" }}>
+    <animated.div style={props}>
+      <div style={{ position: "absolute", width: "100%" }}>
         <Routes location={item}>
           <Route path="/" element={<MainComponent />} />
           <Route path="/skills" element={<Skills />} />
@@ -39,6 +38,6 @@ export function Router() {
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
-    </animated.main>
+    </animated.div>
   ));
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Header,
   HeaderBody,
@@ -19,6 +19,7 @@ export function HeaderComponent() {
   };
 
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <Header className={"shadowed"}>
       <Container>
@@ -30,21 +31,50 @@ export function HeaderComponent() {
           <ButtonMenu className={isOpen ? "active" : ""}>
             <ButtonUl>
               <li>
-                <Button onClick={() => navigate("/")}>Home</Button>
+                <Button
+                  onClick={() => navigate("/")}
+                  className={location.pathname == "/" ? "currentPage" : ""}
+                >
+                  Home
+                </Button>
               </li>
               <li>
-                <Button onClick={() => navigate("/about")}>About me</Button>
+                <Button
+                  onClick={() => navigate("/about")}
+                  className={location.pathname == "/about" ? "currentPage" : ""}
+                >
+                  About me
+                </Button>
               </li>
               <li>
-                <Button onClick={() => navigate("/skills")}>Skills</Button>
+                <Button
+                  onClick={() => navigate("/skills")}
+                  className={
+                    location.pathname == "/skills" ? "currentPage" : ""
+                  }
+                >
+                  Skills
+                </Button>
               </li>
               <li>
-                <Button onClick={() => navigate("/portfolio")}>
+                <Button
+                  onClick={() => navigate("/portfolio")}
+                  className={
+                    location.pathname == "/portfolio" ? "currentPage" : ""
+                  }
+                >
                   Portfolio
                 </Button>
               </li>
               <li>
-                <Button onClick={() => navigate("/contact")}>Contact me</Button>
+                <Button
+                  onClick={() => navigate("/contact")}
+                  className={
+                    location.pathname == "/contact" ? "currentPage" : ""
+                  }
+                >
+                  Contact me
+                </Button>
               </li>
             </ButtonUl>
           </ButtonMenu>

@@ -66,7 +66,7 @@ export const ContactInput = styled.div`
 
 export const ContactTextWrapper = styled.div`
   display: flex;
-  min-height: 500px;
+  min-height: 300px;
   margin: 10px;
   textarea {
     font-size: 19px;
@@ -93,27 +93,39 @@ export const ContactTextWrapper = styled.div`
 
 export const ContactSendButton = styled.div`
   align-items: center;
+
   button {
     height: 50px;
     width: 250px;
     font-size: 20px;
-    border-radius: 10px;
+    color: white;
+    border-radius: 30px;
     cursor: pointer;
-    background: none;
-    border: 3px solid #8360c3;
+    background: linear-gradient(90deg, #00d4ff, #8360c3, #622bdc, #00d4ff);
+    background-size: 400%;
+    border: none;
     margin: 20px;
     align-items: center;
     transition-duration: 1s;
+
     :hover {
-      transform: perspective(1px) scale(1.1);
-      box-shadow: 5px 5px 5px 0 #432b6b;
+      animation: animate 8s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 400%;
+      }
     }
   }
 `;
 
 export const FiledError = styled.p`
   text-align: start;
-  font-weight: 600;
-  margin: 0 0 0 25px;
+  font-weight: 500;
+  margin: 0 0 0 10px;
   color: red;
 `;
